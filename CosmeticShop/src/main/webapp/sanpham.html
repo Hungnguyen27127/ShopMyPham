@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Sản Phẩm</title>
+ 
+<style>
+th, td {
+    padding: 5px;
+}
+</style>
+ 
+</head>
+ 
+<body>
+    <!-- Include _menu.html -->
+    <h2>Sản Phẩm</h2>
+ 	<a th:href="@{/sanpham}">Sản Phẩm</a>  
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Tên sản phẩm</th>
+            <th>Thương hiệu</th>
+            <th>Nơi sản xuất</th>
+        </tr>
+        <tr th:each="sanpham : ${lstSanPham}">
+            <td th:utext="${sanpham.idsanpham}">..</td>
+            <td th:utext="${sanpham.tensanpham}">..</td>
+            <td th:utext="${sanpham.thuonghieu}">..</td>
+            <td th:utext="${sanpham.noisanxuat}">..</td>
+        </tr>
+ 
+    </table>
+</body>
+</html>

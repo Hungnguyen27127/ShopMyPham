@@ -18,7 +18,7 @@ public class SanPham {
 	@Column(name = "TenSanPham", nullable = true)
 	private String tensanpham;
 	@Column(name = "IDLoaiSanPham", nullable = true)
-	private int idloaisanpham;
+	private Integer idloaisanpham;
 	@Column(name = "AnhSanPham", nullable = true)
 	private String anhsanpham;
 	@Column(name = "ThuongHieu", nullable = true)
@@ -53,10 +53,11 @@ public class SanPham {
 	public void setTensanpham(String tensanpham) {
 		this.tensanpham = tensanpham;
 	}
-	public int getIdloaisanpham() {
+	
+	public Integer getIdloaisanpham() {
 		return idloaisanpham;
 	}
-	public void setIdloaisanpham(int idloaisanpham) {
+	public void setIdloaisanpham(Integer idloaisanpham) {
 		this.idloaisanpham = idloaisanpham;
 	}
 	public String getAnhsanpham() {
