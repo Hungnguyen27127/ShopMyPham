@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.example.SMP.models.SanPham;
 
-@Repository
+
 @Transactional
 public class SanPhamDAO extends JdbcDaoSupport{
 	@Autowired
@@ -23,7 +23,7 @@ public class SanPhamDAO extends JdbcDaoSupport{
 		this.setDataSource(dataSource);
 	}
 	
-	public List<SanPham> listNhanVien(){
+	public List<SanPham> lstProduct(){
 		String sql = "from SanPham";
 		Session session = this.sessionFactory.getCurrentSession();
 		Query<SanPham> query = session.createQuery(sql, SanPham.class);

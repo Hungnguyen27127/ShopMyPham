@@ -8,20 +8,23 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.example.SMP.DAOs.SanPhamDAO;
 import com.example.SMP.models.SanPham;
-
+import com.example.SMP.service.productService;
+ 
 @Controller
-
-public class SanPhamController {
+ public class SanPhamController {
+	
+	private static String PAGE_PRODUCT = "sanpham";
+	
+	
 	@Autowired
-	private SanPhamDAO sanphamDAO;
+	private productService prService;
 	
 	@RequestMapping(name="/sanpham", method=RequestMethod.GET)
 	public String getLisSanPham(Model model) {
-		List<SanPham> list = sanphamDAO.listNhanVien();
-		model.addAttribute("lstSanPham", list);
-		return "sanpham";
+		List<SanPham> lstProduct = prService.getListProduct();
+		model.addAttribute("lstProduct", lstProduct);
+		return "PAGE_PRODUCT";
 	}
 	
 	
